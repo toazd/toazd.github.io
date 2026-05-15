@@ -6,7 +6,7 @@ layout: default
 
 #### Selah is a cross platform, feature rich, Bible-focused, KJV Bible study app for all platforms.
 
-<img url=""></img>
+<center><img src="https://github.com/toazd/toazd.github.io/blob/main/Screenshot_20260515_102229.png?raw=true" width="300"></center>
 
 <ul>
     <li>Open source: 100% transparency and anyone can contribute.</li>
