@@ -9,7 +9,7 @@ layout: default
 
 #### Selah is a touch friendly, feature rich, Bible-focused, KJV Bible study app.
 
-#### <a href="https://toazd.github.io/bible">Try the web version by clicking/tapping here</a>
+#### <a href="https://toazd.github.io/bible">Click here to open the web version of Selah</a>
 
 <center><img src="https://github.com/toazd/toazd.github.io/blob/main/Screenshot_20260515_103629.png?raw=true" width="300"></center>
 
