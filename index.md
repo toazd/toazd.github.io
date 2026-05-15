@@ -1,10 +1,13 @@
 ---
-
 layout: default
-
 ---
+<center>
+    <p style="color: red !important;">
+    Verily, verily, I say unto thee, Except a man be born again, he cannot see the kingdom of God.
+    </p>
+</center>
 
-#### Selah is a cross platform, feature rich, Bible-focused, KJV Bible study app for all platforms.
+#### Selah is a touch friendly, feature rich, Bible-focused, KJV Bible study app.
 
 <center><img src="https://github.com/toazd/toazd.github.io/blob/main/Screenshot_20260515_103629.png?raw=true" width="300"></center>
 
@@ -12,31 +15,19 @@ layout: default
     <li>Open source: 100% transparency and anyone can contribute.</li>
     <li>No distractions, no ads, no analytics, no gated features, no copyrights.</li>
     <li>Customizable colors, fonts, and font size.</li>
-    <li>Support for word-level highlighting (with customizeable highlight colors).</li>
-    <li>Support for verse-level notes (with both simple and advanced formatting).</li>
-    <li>Support for click-able reference links in notes.</li>
-    <li>Built-in support for displaying TSK references (Treasury of Scripture Knowledge).</li>
-    <li>A simple search that includes advanced and unique features.</li>
-    <li>(Optional) Seemless, transparent, account-based online sync (no email required; uses <a href="https://supabase.com/">Supabase</a>).</li>
-    <li>Data exporting and importing to a portable JSON format (highlights, notes, verse history, and search history).</li>
+    <li>Word-level highlighting (customizeable highlight colors).</li>
+    <li>Verse-level notes (simple and advanced formatting).</li>
+    <li>Built-in support for TSK references (Treasury of Scripture Knowledge).</li>
+    <li>A simple search that also includes advanced and unique features.</li>
+    <li>Optional, seemless, transparent, account-based online sync (no email required; uses <a href="https://supabase.com/">Supabase</a>).</li>
+    <li>Local user-data exporting and importing to a portable format (JSON).</li>
 </ul>
-
 ---
+<center><h3>Download Selah</h3></center>
 
-##### If platform auto-detection fails, download links are below
+#### Virus total reports: <a href="https://www.virustotal.com/gui/file/71f888c183f9bd67a5ec4c0d11e141cac48ebc6ef5d394b4a686313329219482" target="_blank">Windows portable</a>, <a href="https://www.virustotal.com/gui/file/ef2ef330d3dec842ee6216dd02a638aa6407be03c22a0d5f788ba73cde813918" target="_blank">Linux portable</a>
 
-<div id="detection-container" style="text-align: center; padding: 20px; border: 1px solid #ddd; border-radius: 16px; margin-bottom: 30px;">
-  <h2 id="os-heading">Detecting your platform...</h2>
-  <div id="primary-action">
-    <!-- This button will be populated by JS -->
-    <a id="main-download-btn" href="#" class="button" style="font-size: 1.2em; padding: 10px 25px;">Download</a>
-  </div>
-  <p id="os-subtext" style="font-size: 0.9em; color: #666;"></p>
-</div>
-
-##### If you need assistance with downloading, installing, or running Selah <a href="https://github.com/toazd/selah/issues" target="_blank">open an issue for help</a> (click the "New Issue" button after opening the link).
-
-##### If you don't have or don't want a Github account to open an issue then simply send your concerns to wmcdannell@gmail.com
+##### If you need assistance with downloading, installing, or running Selah please <a href="https://github.com/toazd/selah/issues" target="_blank">open an issue for help</a> (click the green "New Issue" button after opening the link). Some packages will require manual installation. Selah is not currently available on any app store.
 
 | Platform | Format | Link |
 | :--- | :--- | :--- |
@@ -45,14 +36,12 @@ layout: default
 | MacOS / OS X | DMG | <a id="link-dmg" href="#">Fetching...</a> |
 | iOS / iPadOS | IPA | <a id="link-ipa" href="#">Fetching...</a> |
 | Android / ChromeOS | APK | <a id="link-apk" href="#">Fetching...</a> |
-| Linux (AppImage) | AppImage | <a id="link-appimage" href="#">Fetching...</a> |
-| Linux (Flatpak) | Flatpak | <a id="link-flatpak" href="#">Fetching...</a> |
 | Arch / Manjaro / CachyOS | ZST | <a id="link-zst" href="#">Fetching...</a> |
 | Debian / Ubuntu | DEB | <a id="link-deb" href="#">Fetching...</a> |
 | Fedora / OpenSUSE | RPM | <a id="link-rpm" href="#">Fetching...</a> |
-| Linux (Generic/Portable) | Tarball | <a id="link-tar" href="#">Fetching...</a> |
-
----
+| Linux | AppImage | <a id="link-appimage" href="#">Fetching...</a> |
+| Linux | Flatpak | <a id="link-flatpak" href="#">Fetching...</a> |
+| Linux | Tarball / Portable | <a id="link-tar" href="#">Fetching...</a> |
 
 <script>
 async function updateLinks() {
@@ -93,43 +82,6 @@ async function updateLinks() {
             }
         }
     });
-
-    // Handle OS Detection for the Big Button
-    const ua = navigator.userAgent;
-    const platform = navigator.platform;
-    const btn = document.getElementById('main-download-btn');
-    const heading = document.getElementById('os-heading');
-
-    let detectedUrl = "#all-platforms";
-    let osName = "";
-
-    if (/Android/i.test(ua)) {
-        osName = "Android";
-        detectedUrl = downloadUrls[".apk"];
-    } else if (/iPhone|iPad|iPod/i.test(ua)) {
-        osName = "iOS";
-        detectedUrl = "YOUR_APP_STORE_LINK"; 
-    } else if (/Win/i.test(platform)) {
-        osName = "Windows";
-        detectedUrl = downloadUrls[".exe"];
-    } else if (/Mac/i.test(platform)) {
-        osName = "macOS";
-        detectedUrl = downloadUrls[".dmg"];
-    } else if (/Linux/i.test(platform)) {
-        osName = "Linux";
-        detectedUrl = downloadUrls[".appimage"]; // Default Linux recommendation
-        
-        if (/Ubuntu|Debian/i.test(ua)) {
-            detectedUrl = downloadUrls[".deb"] || detectedUrl;
-        } else if (/Arch/i.test(ua)) {
-            detectedUrl = downloadUrls[".zst"] || detectedUrl;
-        }
-    }
-
-    if (osName && detectedUrl) {
-        heading.innerText = "Download for " + osName;
-        btn.href = detectedUrl;
-    }
 }
 
 window.addEventListener('load', updateLinks);
