@@ -27,7 +27,10 @@ layout: default
 
 #### Virus total reports: <a href="https://www.virustotal.com/gui/file/71f888c183f9bd67a5ec4c0d11e141cac48ebc6ef5d394b4a686313329219482" target="_blank">Windows portable</a>, <a href="https://www.virustotal.com/gui/file/ef2ef330d3dec842ee6216dd02a638aa6407be03c22a0d5f788ba73cde813918" target="_blank">Linux portable</a>
 
-##### If you need assistance with downloading, installing, or running Selah please <a href="https://github.com/toazd/selah/issues" target="_blank">open an issue for help</a> (click the green "New Issue" button after opening the link). Some packages will require manual installation. Selah is not currently available on any app store.
+##### If you need assistance with downloading, installing, or running Selah please <a href="https://github.com/toazd/selah/issues" target="_blank">open an issue for help</a> (click the green "New Issue" button after opening the link).
+##### Some packages will require manual installation. See below for basic installation instructions.
+
+##### Selah is not currently available on any app store.
 
 | Platform | Format | Link |
 | :--- | :--- | :--- |
@@ -42,6 +45,24 @@ layout: default
 | Linux | AppImage | <a id="link-appimage" href="#">Fetching...</a> |
 | Linux | Flatpak | <a id="link-flatpak" href="#">Fetching...</a> |
 | Linux | Tarball / Portable | <a id="link-tar" href="#">Fetching...</a> |
+
+Basic installation help:
+- Windows portable
+  - Unzip anywhere and run selah.exe
+- Linux Portable
+  - Unzip anywhere and run selah
+- Linux (AppImage)
+  - Make the downloaded file executible with a file manager or `chmod +x ./Selah-X.X.X.AppImage` and then run it
+- Linux (Flatpak)
+  - `flatpak install ./selah-X.X.X.flatpak`
+  - Press `y` to install any needed dependancies
+  - Press `y` to give necessary application permissions (access to XDG configured config path (typically `~/.config`) to store user data and access to dbus and network for connectivity check and sync features if enabled)
+- Arch / Manjaro / CachyOS
+  - `sudo pacman -U /.selah-X.X.X.zst`
+- Debian / Ubuntu / MX Linux
+  - `sudo dpkg -i ./selah_X.X.X.deb`
+- Fedora / OpenSUSE / RPM
+  - `sudo rpm -ivh ./selah-X.X.X.rpm`
 
 <script>
 async function updateLinks() {
