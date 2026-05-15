@@ -3,7 +3,7 @@ email: wmcdannell@gmail.com
 show_downloads: false
 google_analytics:
 description: >- # this means to ignore newlines until "baseurl:"
-  Cross platform Bible study
+  Cross platform Bible study made easy
 baseurl: ""
 url: "https://toazd.github.io"
 domain: toazd.github.io

@@ -6,22 +6,24 @@ layout: default
 
 #### Selah is a cross platform, feature rich, Bible-focused, KJV Bible study app for all platforms.
 
-<center><img src="https://github.com/toazd/toazd.github.io/blob/main/Screenshot_20260515_102229.png?raw=true" width="300"></center>
+<center><img src="https://github.com/toazd/toazd.github.io/blob/main/Screenshot_20260515_103629.png?raw=true" width="300"></center>
 
 <ul>
     <li>Open source: 100% transparency and anyone can contribute.</li>
-    <li>No ads, no gated features, no copyrights.</li>
+    <li>No distractions, no ads, no analytics, no gated features, no copyrights.</li>
     <li>Customizable colors, fonts, and font size.</li>
     <li>Support for word-level highlighting (with customizeable highlight colors).</li>
     <li>Support for verse-level notes (with both simple and advanced formatting).</li>
     <li>Support for click-able reference links in notes.</li>
     <li>Built-in support for displaying TSK references (Treasury of Scripture Knowledge).</li>
-    <li>A simple search that includes both advanced and unique features.</li>
+    <li>A simple search that includes advanced and unique features.</li>
     <li>(Optional) Seemless, transparent, account-based online sync (no email required; uses <a href="https://supabase.com/">Supabase</a>).</li>
     <li>Data exporting and importing to a portable JSON format (highlights, notes, verse history, and search history).</li>
 </ul>
 
 ---
+
+##### If platform auto-detection fails, download links are below
 
 <div id="detection-container" style="text-align: center; padding: 20px; border: 1px solid #ddd; border-radius: 16px; margin-bottom: 30px;">
   <h2 id="os-heading">Detecting your platform...</h2>
