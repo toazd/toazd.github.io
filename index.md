@@ -50,26 +50,27 @@ layout: default
 | Linux | Flatpak | <a id="link-flatpak" href="#">Fetching...</a> |
 | Linux | Tarball / Portable | <a id="link-tar" href="#">Fetching...</a> |
 
-Basic installation help:
-- Windows portable
+**<center>Basic installation help</center>**
+
+- **Windows portable**
   - Unzip anywhere and run selah.exe
-- Linux Portable
+- **Linux Portable**
   - Unzip anywhere and run selah
-- MacOS
+- **MacOS**
   - Unknown. Testers needed.
-- iOS
+- **iOS**
   - Sideloadly
-- Linux (AppImage)
+- **Linux (AppImage)**
   - Make the downloaded file executible with a file manager or `chmod +x ./Selah-X.X.X.AppImage` and then run it
-- Linux (Flatpak)
+- **Linux (Flatpak)**
   - `flatpak install ./selah-X.X.X.flatpak`
   - Press `y` to install any needed dependencies
   - Press `y` to give necessary application permissions (access to XDG configured config path, typically `~/.config`, to store user data and access to dbus and network for connectivity check and sync features if enabled)
-- Arch / Manjaro / CachyOS
+- **Arch / Manjaro / CachyOS**
   - `sudo pacman -U /.selah-X.X.X.zst`
-- Debian / Ubuntu / MX Linux
+- **Debian / Ubuntu / MX Linux**
   - `sudo dpkg -i ./selah_X.X.X.deb`
-- Fedora / OpenSUSE / RPM
+- **Fedora / OpenSUSE / RPM**
   - `sudo rpm -ivh ./selah-X.X.X.rpm`
 
 <script>
