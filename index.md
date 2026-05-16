@@ -60,6 +60,9 @@ layout: default
   - Unknown. Testers needed.
 - **iOS**
   - Sideloadly
+- **Android**
+  - Enable Install from other sources in settings
+  - or `adb install ./selah-X.X.X.apk` from a host while usb debugging is enabled
 - **Linux (AppImage)**
   - Make the downloaded file executible with a file manager or `chmod +x ./Selah-X.X.X.AppImage` and then run it
 - **Linux (Flatpak)**
