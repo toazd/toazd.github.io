@@ -1,0 +1,29 @@
+name: Generate Documents Directory Listing
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-directory-listing:
+    runs-on: ubuntu-latest
+    name: Generate Directory Index
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate Directory Listings for Documents
+        uses: jayanta525/github-pages-directory-listing@v4.0.0
+        with:
+          FOLDER: documents
+
+      - name: Commit and Push Changes
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: main
+          folder: .
