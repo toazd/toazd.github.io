@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Generate Directory Listings for Documents
         uses: jayanta525/github-pages-directory-listing@v4.0.0
