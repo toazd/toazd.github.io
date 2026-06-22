@@ -22,7 +22,6 @@ layout: default
 </ul>
 
 <center><h3><a href="https://toazd.github.io/bible" target="_blank">Click here to open the web version of Selah</a></h3></center>
-<center><h4>(it may take awhile to load the first time)</h4></center>
 
 ---
 <center><h3>Download Selah</h3></center>
