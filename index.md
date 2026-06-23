@@ -16,6 +16,7 @@ layout: default
     <li>Word-level highlighting (customizeable highlight colors).</li>
     <li>Verse-level notes (simple and advanced formatting).</li>
     <li>Built-in support for TSK references (Treasury of Scripture Knowledge).</li>
+    <li>Built-in support for Strongs numbers, definitions, and a unique Strongs search</li>
     <li>A simple search that also includes advanced and unique features.</li>
     <li>Optional, seemless, transparent, account-based online sync (no email required; uses <a href="https://supabase.com/">Supabase</a>).</li>
     <li>Local user-data exporting and importing to a portable format (JSON).</li>
