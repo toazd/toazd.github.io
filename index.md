@@ -32,9 +32,8 @@ layout: default
 - <a href="https://www.virustotal.com/gui/file/a3d72189bc8b5cfd1448230abf6f53fdbde1816874223bc40ab6bbace352f97f?nocache=1">Android APK</a>
 
 ##### If you need assistance with downloading, installing, or running Selah please <a href="https://github.com/toazd/selah/issues" target="_blank">open an issue for help</a> (click the green "New Issue" button after opening the link).
-##### Some packages will require manual installation. See below for basic installation instructions.
-
 ##### Selah is not currently available on any app store.
+##### Some packages will require manual installation. See below for installation instructions.
 
 | Platform | Format | Link |
 | :--- | :--- | :--- |
@@ -43,8 +42,10 @@ layout: default
 | MacOS / OS X | DMG | <a id="link-dmg" href="#">Fetching...</a> |
 | iOS / iPadOS | IPA | <a id="link-ipa" href="#">Fetching...</a> |
 | Android / ChromeOS | APK | <a id="link-apk" href="#">Fetching...</a> |
+| Arch / Manjaro / CachyOS | AUR | <a id="link-zst" href="https://aur.archlinux.org/packages/selah-bin">selah-bin</a> |
 | Arch / Manjaro / CachyOS | ZST | <a id="link-zst" href="#">Fetching...</a> |
 | Debian / Ubuntu | DEB | <a id="link-deb" href="#">Fetching...</a> |
+| Ubuntu | Snap | <a id="link-snap" href="#">Fetching...</a> |
 | Fedora / OpenSUSE | RPM | <a id="link-rpm" href="#">Fetching...</a> |
 | Linux | AppImage | <a id="link-appimage" href="#">Fetching...</a> |
 | Linux | Flatpak | <a id="link-flatpak" href="#">Fetching...</a> |
@@ -52,6 +53,8 @@ layout: default
 
 **<center>Basic installation help</center>**
 
+- **Windows installer**
+  - Download and run the installer
 - **Windows portable**
   - Unzip anywhere and run selah.exe
 - **Linux Portable**
@@ -68,11 +71,14 @@ layout: default
 - **Linux (Flatpak)**
   - `flatpak install ./selah-X.X.X.flatpak`
   - Press `y` to install any needed dependencies
-  - Press `y` to give necessary application permissions (access to XDG configured config path, typically `~/.config`, to store user data and access to dbus and network for connectivity check and sync features if enabled)
+  - Press `y` to give necessary application permissions (access to XDG configured config path, typically `~/.config`, to store user data and access to dbus; network connectivity and hardware check for sync features if enabled)
 - **Arch / Manjaro / CachyOS**
-  - `sudo pacman -U /.selah-X.X.X.zst`
+  - `paru/yay -S selah-bin` (Arch AUR)
+  - `sudo pacman -U /.selah-X.X.X.zst` (manual)
 - **Debian / Ubuntu / MX Linux**
   - `sudo dpkg -i ./selah_X.X.X.deb`
+- **Ubuntu Snap**
+  - `sudo snap install --dangerous ./selah_X.X.X.snap`
 - **Fedora / OpenSUSE / RPM**
   - `sudo rpm -ivh ./selah-X.X.X.rpm`
 
@@ -83,7 +89,7 @@ async function updateLinks() {
     const data = await response.json();
     const assets = data.assets;
 
-    // Mapping extensions to their HTML IDs
+    // Map extensions to their HTML IDs
     const fileMap = {
         ".exe": "link-exe",
         ".zip": "link-zip",
@@ -95,7 +101,8 @@ async function updateLinks() {
         ".zst": "link-zst",
         ".deb": "link-deb",
         ".rpm": "link-rpm",
-        ".tar.gz": "link-tar"
+        ".tar.gz": "link-tar",
+        ".snap": "link-snap"
     };
 
     const downloadUrls = {};
