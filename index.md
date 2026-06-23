@@ -32,8 +32,7 @@ layout: default
 - <a href="https://www.virustotal.com/gui/file/a3d72189bc8b5cfd1448230abf6f53fdbde1816874223bc40ab6bbace352f97f?nocache=1">Android APK</a>
 
 ##### If you need assistance with downloading, installing, or running Selah please <a href="https://github.com/toazd/selah/issues" target="_blank">open an issue for help</a> (click the green "New Issue" button after opening the link).
-##### Selah is not currently available on any app store.
-##### Some packages will require manual installation. See below for installation instructions.
+##### Selah is not currently available on any app store. Some packages will require manual installation. See below for installation instructions.
 
 | Platform | Format | Link |
 | :--- | :--- | :--- |
@@ -42,7 +41,7 @@ layout: default
 | MacOS / OS X | DMG | <a id="link-dmg" href="#">Fetching...</a> |
 | iOS / iPadOS | IPA | <a id="link-ipa" href="#">Fetching...</a> |
 | Android / ChromeOS | APK | <a id="link-apk" href="#">Fetching...</a> |
-| Arch / Manjaro / CachyOS | AUR | <a id="link-zst" href="https://aur.archlinux.org/packages/selah-bin">selah-bin</a> |
+| Arch / Manjaro / CachyOS | AUR | <a href="https://aur.archlinux.org/packages/selah-bin">selah-bin</a> |
 | Arch / Manjaro / CachyOS | ZST | <a id="link-zst" href="#">Fetching...</a> |
 | Debian / Ubuntu | DEB | <a id="link-deb" href="#">Fetching...</a> |
 | Ubuntu | Snap | <a id="link-snap" href="#">Fetching...</a> |
@@ -66,12 +65,6 @@ layout: default
 - **Android**
   - Enable Install from other sources in settings
   - or `adb install ./selah-X.X.X.apk` from a host while usb debugging is enabled
-- **Linux (AppImage)**
-  - Make the downloaded file executible with a file manager or `chmod +x ./Selah-X.X.X.AppImage` and then run it
-- **Linux (Flatpak)**
-  - `flatpak install ./selah-X.X.X.flatpak`
-  - Press `y` to install any needed dependencies
-  - Press `y` to give necessary application permissions (access to XDG configured config path, typically `~/.config`, to store user data and access to dbus; network connectivity and hardware check for sync features if enabled)
 - **Arch / Manjaro / CachyOS**
   - `paru/yay -S selah-bin` (Arch AUR)
   - `sudo pacman -U /.selah-X.X.X.zst` (manual)
@@ -81,6 +74,12 @@ layout: default
   - `sudo snap install --dangerous ./selah_X.X.X.snap`
 - **Fedora / OpenSUSE / RPM**
   - `sudo rpm -ivh ./selah-X.X.X.rpm`
+- **Linux (AppImage)**
+  - Make the downloaded file executible with a file manager or `chmod +x ./Selah-X.X.X.AppImage` and then run it
+- **Linux (Flatpak)**
+  - `flatpak install ./selah-X.X.X.flatpak`
+  - Press `y` to install any needed dependencies
+  - Press `y` to give necessary application permissions (access to XDG configured config path, typically `~/.config`, to store user data and access to dbus; network connectivity and hardware check for sync features if enabled)
 
 <script>
 async function updateLinks() {
