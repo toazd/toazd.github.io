@@ -76,7 +76,7 @@ layout: default
 - **Fedora / OpenSUSE / RPM**
   - `sudo rpm -ivh ./selah-X.X.X.rpm`
 - **Linux (AppImage)**
-  - Make the downloaded file executible with a file manager or `chmod +x ./Selah-X.X.X.AppImage` and then run it
+  - Make the downloaded file executible with a file manager or `chmod +x ./Selah-X.X.X.AppImage` and then run it.
 - **Linux (Flatpak)**
   - `flatpak install ./selah-X.X.X.flatpak`
   - Press `y` to install any needed dependencies
