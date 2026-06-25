@@ -2617,6 +2617,7 @@ image_picker_platform_interface
 path_provider
 path_provider_android
 path_provider_foundation
+path_provider_linux
 path_provider_platform_interface
 shared_preferences
 shared_preferences_android
@@ -7045,7 +7046,6 @@ SOFTWARE.
 flutter_lints
 image_picker_linux
 image_picker_windows
-path_provider_linux
 path_provider_windows
 plugin_platform_interface
 shared_preferences_linux
