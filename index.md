@@ -72,7 +72,8 @@ layout: default
 - **Debian / Ubuntu / MX Linux**
   - `sudo dpkg -i ./selah_X.X.X.deb`
 - **Ubuntu Snap**
-  - `sudo snap install --dangerous ./selah_X.X.X.snap`
+  - Snap store: `snap install selah`
+  - Downloaded snap: `sudo snap install --dangerous ./selah_X.X.X.snap`
 - **Fedora / OpenSUSE / RPM**
   - `sudo rpm -ivh ./selah-X.X.X.rpm`
 - **Linux (AppImage)**
