@@ -99,7 +99,7 @@ class CompiledApp {
       BK: (x0,x1,x2,x3) => x0.putImageData(x1,x2,x3),
       BL: (x0,x1) => x0.postMessage(x1),
       BM: (x0,x1) => x0.key(x1),
-      BN: (wasmFunction,f) => finalizeWrapper(f, function(x0) { return wasmFunction(f,arguments.length,x0) }),
+      BN: (x0,x1,x2) => x0.addEventListener(x1,x2),
       C: Function.prototype.call.bind(Number.prototype.toString),
       CB: (wasmFunction,f) => finalizeWrapper(f, function(x0) { return wasmFunction(f,arguments.length,x0) }),
       CC: Function.prototype.call.bind(DataView.prototype.setUint8),
@@ -113,7 +113,7 @@ class CompiledApp {
       CK: x0 => x0.arrayBuffer(),
       CL: (x0,x1) => { x0.onmessage = x1 },
       CM: x0 => x0.length,
-      CN: (x0,x1,x2) => x0.addEventListener(x1,x2),
+      CN: (x0,x1) => x0.removeChild(x1),
       D: Function.prototype.call.bind(BigInt.prototype.toString),
       DB: (x0,x1) => x0.focus(x1),
       DC: Function.prototype.call.bind(DataView.prototype.setInt8),
@@ -131,7 +131,7 @@ class CompiledApp {
       DK: (x0,x1) => x0.transferFromImageBitmap(x1),
       DL: () => new AbortController(),
       DM: x0 => ({type: x0}),
-      DN: (wasmFunction,f) => finalizeWrapper(f, function(x0) { return wasmFunction(f,arguments.length,x0) }),
+      DN: x0 => x0.firstChild,
       E: (exn) => {
         let stackString = exn.toString();
         let frames = stackString.split('\n');
@@ -171,7 +171,7 @@ class CompiledApp {
       FK: x0 => x0.width,
       FL: (x0,x1) => globalThis.fetch(x0,x1),
       FM: x0 => new ClipboardItem(x0),
-      FN: (x0,x1) => x0.removeChild(x1),
+      FN: (x0,x1,x2) => x0.removeEventListener(x1,x2),
       G: s => JSON.stringify(s),
       GB: () => [],
       GC: (o, start, length) => new Float64Array(o.buffer, o.byteOffset + start, length),
@@ -185,7 +185,7 @@ class CompiledApp {
       GK: x0 => x0.rasterEndMilliseconds,
       GL: (x0,x1) => x0.get(x1),
       GM: (x0,x1) => x0.write(x1),
-      GN: x0 => x0.firstChild,
+      GN: (wasmFunction,f) => finalizeWrapper(f, function(x0) { return wasmFunction(f,arguments.length,x0) }),
       H: Function.prototype.call.bind(Number.prototype.toString),
       HB: (a, i) => a.push(i),
       HC: (o, start, length) => new Float32Array(o.buffer, o.byteOffset + start, length),
@@ -199,7 +199,7 @@ class CompiledApp {
       HK: x0 => x0.rasterStartMilliseconds,
       HL: (wasmFunction,f) => finalizeWrapper(f, function(x0,x1,x2) { return wasmFunction(f,arguments.length,x0,x1,x2) }),
       HM: x0 => x0.clipboard,
-      HN: (wasmFunction,f) => finalizeWrapper(f, function(x0) { return wasmFunction(f,arguments.length,x0) }),
+      HN: () => new FileReader(),
       I: Function.prototype.call.bind(String.prototype.indexOf),
       IB: x0 => new Int8Array(x0),
       IC: (o, start, length) => new Uint32Array(o.buffer, o.byteOffset + start, length),
@@ -213,7 +213,7 @@ class CompiledApp {
       IK: x0 => x0.imageBitmaps,
       IL: (x0,x1) => x0.forEach(x1),
       IM: x0 => globalThis.URL.createObjectURL(x0),
-      IN: (x0,x1,x2) => x0.removeEventListener(x1,x2),
+      IN: (wasmFunction,f) => finalizeWrapper(f, function(x0) { return wasmFunction(f,arguments.length,x0) }),
       J: (s, p, i) => s.lastIndexOf(p, i),
       JB: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
         const getValue = dartInstance.exports.$wasmI8ArrayGet;
@@ -246,7 +246,7 @@ class CompiledApp {
       KK: (x0,x1) => { x0.width = x1 },
       KL: x0 => x0.statusText,
       KM: x0 => globalThis.URL.revokeObjectURL(x0),
-      KN: (wasmFunction,f) => finalizeWrapper(f, function(x0) { return wasmFunction(f,arguments.length,x0) }),
+      KN: (x0,x1) => x0.readAsArrayBuffer(x1),
       L: o => {
         if (o === undefined || o === null) return 0;
         if (typeof o === 'number') return 1;
@@ -264,7 +264,7 @@ class CompiledApp {
       LK: x0 => x0.convertToBlob(),
       LL: x0 => x0.url,
       LM: x0 => x0.read(),
-      LN: () => new FileReader(),
+      LN: x0 => x0.result,
       M: x0 => x0.index,
       MB: x0 => new Int16Array(x0),
       MC: (o, start, length) => new Uint8ClampedArray(o.buffer, o.byteOffset + start, length),
@@ -278,7 +278,7 @@ class CompiledApp {
       MK: (x0,x1,x2) => new ImageData(x0,x1,x2),
       ML: x0 => x0.status,
       MM: (x0,x1) => x0.getType(x1),
-      MN: (wasmFunction,f) => finalizeWrapper(f, function(x0) { return wasmFunction(f,arguments.length,x0) }),
+      MN: (x0,x1) => { x0.draggable = x1 },
       N: o => String(o),
       NB: x0 => new Uint16Array(x0),
       NC: (o, start, length) => new Uint8Array(o.buffer, o.byteOffset + start, length),
@@ -292,7 +292,7 @@ class CompiledApp {
       NK: (x0,x1) => x0.getContext(x1),
       NL: x0 => x0.getReader(),
       NM: x0 => x0.text(),
-      NN: (wasmFunction,f) => finalizeWrapper(f, function(x0) { return wasmFunction(f,arguments.length,x0) }),
+      NN: x0 => x0.onLine,
       O: o => o === undefined,
       OB: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
         const getValue = dartInstance.exports.$wasmI16ArrayGet;
@@ -312,7 +312,7 @@ class CompiledApp {
       OK: (x0,x1) => new OffscreenCanvas(x0,x1),
       OL: x0 => x0.read(),
       OM: x0 => x0.types,
-      ON: (x0,x1) => x0.readAsArrayBuffer(x1),
+      ON: x0 => x0.length,
       P: (x0,x1) => x0.exec(x1),
       PB: x0 => new Int32Array(x0),
       PC: (x0,x1) => x0.querySelector(x1),
@@ -326,7 +326,7 @@ class CompiledApp {
       PK: x0 => x0.allocationSize(),
       PL: x0 => x0.value,
       PM: (wasmFunction,f) => finalizeWrapper(f, function(x0) { return wasmFunction(f,arguments.length,x0) }),
-      PN: x0 => x0.result,
+      PN: x0 => x0.getReader(),
       Q: (x0,x1) => { x0.lastIndex = x1 },
       QB: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
         const getValue = dartInstance.exports.$wasmI32ArrayGet;
@@ -345,7 +345,7 @@ class CompiledApp {
       QK: (x0,x1) => x0.copyTo(x1),
       QL: x0 => x0.done,
       QM: (wasmFunction,f) => finalizeWrapper(f, function(x0) { return wasmFunction(f,arguments.length,x0) }),
-      QN: (x0,x1) => { x0.draggable = x1 },
+      QN: x0 => x0.value,
       R: o => o,
       RB: x0 => new Uint32Array(x0),
       RC: x0 => x0.length,
@@ -359,7 +359,7 @@ class CompiledApp {
       RK: (x0,x1) => { x0.height = x1 },
       RL: x0 => x0.cancel(),
       RM: (x0,x1,x2) => x0.getCurrentPosition(x1,x2),
-      RN: x0 => x0.onLine,
+      RN: x0 => x0.done,
       S: (s, m) => {
         try {
           return new RegExp(s, m);
@@ -379,7 +379,7 @@ class CompiledApp {
       SK: (x0,x1) => { x0.width = x1 },
       SL: x0 => x0.body,
       SM: () => globalThis.Notification.requestPermission(),
-      SN: x0 => x0.length,
+      SN: x0 => x0.read(),
       T: o => o instanceof RegExp,
       TB: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
         const getValue = dartInstance.exports.$wasmF32ArrayGet;
@@ -402,7 +402,7 @@ class CompiledApp {
       TK: (x0,x1) => x0.toDataURL(x1),
       TL: x0 => x0.headers,
       TM: x0 => ({video: x0}),
-      TN: x0 => x0.getReader(),
+      TN: x0 => x0.body,
       U: (string, times) => string.repeat(times),
       UB: x0 => new Float64Array(x0),
       UC: x0 => x0.remove(),
@@ -416,7 +416,7 @@ class CompiledApp {
       UK: (x0,x1,x2,x3) => x0.drawImage(x1,x2,x3),
       UL: x0 => x0.signal,
       UM: (x0,x1) => x0.getUserMedia(x1),
-      UN: x0 => x0.value,
+      UN: x0 => x0.assetBase,
       V: o => o,
       VB: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
         const getValue = dartInstance.exports.$wasmF64ArrayGet;
@@ -435,7 +435,7 @@ class CompiledApp {
       VK: (x0,x1) => x0.getContext(x1),
       VL: x0 => x0.abort(),
       VM: x0 => x0.getVideoTracks(),
-      VN: x0 => x0.done,
+      VN: x0 => x0.loader,
       W: o => {
         if (o === undefined || o === null) return 0;
         if (typeof o === 'boolean') return 1;
@@ -453,7 +453,7 @@ class CompiledApp {
       WK: x0 => x0.format,
       WL: x0 => x0.canvasKitMaximumSurfaces,
       WM: x0 => x0.stop(),
-      WN: x0 => x0.read(),
+      WN: () => globalThis._flutter,
       X: x0 => x0.dotAll,
       XB: (x0,x1,x2) => new Uint8Array(x0,x1,x2),
       XC: (x0,x1,x2,x3) => x0.setProperty(x1,x2,x3),
@@ -494,7 +494,6 @@ class CompiledApp {
       XK: (a, l) => a.length = l,
       XL: x0 => x0.nextSibling,
       XM: x0 => x0.active,
-      XN: x0 => x0.body,
       Y: x0 => x0.unicode,
       YB: (x0,x1,x2) => new DataView(x0,x1,x2),
       YC: x0 => x0.style,
@@ -508,7 +507,6 @@ class CompiledApp {
       YK: () => new Array(),
       YL: (x0,x1) => x0.debug(x1),
       YM: x0 => ({audio: x0}),
-      YN: x0 => x0.assetBase,
       Z: x0 => x0.ignoreCase,
       ZB: (o, p) => o[p],
       ZC: x0 => x0.debugShowSemanticsNodes,
@@ -522,7 +520,6 @@ class CompiledApp {
       ZK: (x0,x1) => new WebSocket(x0,x1),
       ZL: x0 => x0.hostElement,
       ZM: x0 => x0.getAudioTracks(),
-      ZN: x0 => x0.loader,
       a: x0 => x0.multiline,
       aB: (o) => new DataView(o.buffer, o.byteOffset, o.byteLength),
       aC: (x0,x1) => x0.warn(x1),
@@ -544,7 +541,6 @@ class CompiledApp {
       aK: x0 => x0.reason,
       aL: x0 => x0.location,
       aM: x0 => x0.permissions,
-      aN: () => globalThis._flutter,
       b: (exn) => {
         if (exn instanceof Error) {
           return exn.stack;
