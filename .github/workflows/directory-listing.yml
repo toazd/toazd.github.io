@@ -15,8 +15,13 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
+      # This terminal command searches the "documents" folder and all subfolders
+      - name: Clean existing index.html files
+        run: find documents -type f -name "index.html" -delete
+
+      # This runs the plugin, using your specific FOLDER setting
       - name: Generate Directory Listings for Documents
         uses: jayanta525/github-pages-directory-listing@v4.0.0
         with:
