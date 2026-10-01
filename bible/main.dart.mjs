@@ -790,11 +790,7 @@ class CompiledApp {
       qF: (wasmFunction,f) => finalizeWrapper(f, function(x0) { return wasmFunction(f,arguments.length,x0) }),
       qG: (x0,x1) => x0.querySelectorAll(x1),
       qH: x0 => x0.document,
-      qI: () => {
-        return typeof process != "undefined" &&
-               Object.prototype.toString.call(process) == "[object process]" &&
-               process.platform == "win32"
-      },
+      qI: x0 => x0.input,
       qJ: () => new XMLHttpRequest(),
       qK: x0 => x0.localStorage,
       qL: (wasmFunction,f) => finalizeWrapper(f, function(x0) { return wasmFunction(f,arguments.length,x0) }),
@@ -817,11 +813,9 @@ class CompiledApp {
       rG: (x0,x1) => x0.removeProperty(x1),
       rH: (handle) => clearInterval(handle),
       rI: () => {
-        // On browsers return `globalThis.location.href`
-        if (globalThis.location != null) {
-          return globalThis.location.href;
-        }
-        return null;
+        return typeof process != "undefined" &&
+               Object.prototype.toString.call(process) == "[object process]" &&
+               process.platform == "win32"
       },
       rJ: (o, p) => p in o,
       rK: () => globalThis.window,
@@ -841,7 +835,13 @@ class CompiledApp {
       sG: (x0,x1) => x0.add(x1),
       sH: (ms, c) =>
       setInterval(() => dartInstance.exports.$invokeCallback(c), ms),
-      sI: x0 => x0.input,
+      sI: () => {
+        // On browsers return `globalThis.location.href`
+        if (globalThis.location != null) {
+          return globalThis.location.href;
+        }
+        return null;
+      },
       sJ: x0 => x0.groups,
       sK: (x0,x1,x2,x3) => x0.replaceState(x1,x2,x3),
       sL: x0 => x0.shiftKey,
